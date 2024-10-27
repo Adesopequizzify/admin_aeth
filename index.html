@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AetherCoin - Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>AetherCoin Admin</h1>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-page="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </button>
+                <button class="nav-item" data-page="users">
+                    <i class="fas fa-users"></i>
+                    <span>Users</span>
+                </button>
+                <button class="nav-item" data-page="transactions">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>Transactions</span>
+                </button>
+                <button class="nav-item" data-page="tasks">
+                    <i class="fas fa-tasks"></i>
+                    <span>Tasks</span>
+                </button>
+                <button class="nav-item" data-page="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="admin-info">
+                    <img src="https://via.placeholder.com/40" alt="Admin Avatar" class="admin-avatar">
+                    <span id="admin-name">Admin Name</span>
+                </div>
+            </header>
+
+            <div id="dashboard-container" class="page-container">
+                <h2>Dashboard</h2>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3>Total Users</h3>
+                        <p id="total-users">Loading...</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Total Transactions</h3>
+                        <p id="total-transactions">Loading...</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>System Status</h3>
+                        <p id="system-status">Loading...</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Active Tasks</h3>
+                        <p id="active-tasks">Loading...</p>
+                    </div>
+                </div>
+                <div class="maintenance-controls">
+                    <h3>Maintenance Mode</h3>
+                    <div class="maintenance-toggle">
+                        <label class="switch">
+                            <input type="checkbox" id="maintenance-toggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span>Enable Maintenance Mode</span>
+                    </div>
+                    <input type="number" id="maintenance-duration" placeholder="Duration (minutes)" min="1" value="5">
+                    <input type="text" id="maintenance-message" placeholder="Maintenance message">
+                    <button id="save-maintenance" class="btn btn-primary">Save Settings</button>
+                </div>
+            </div>
+
+            <div id="users-container" class="page-container hidden">
+                <h2>Users Management</h2>
+                <div class="users-list">
+                    <!-- Users will be populated here -->
+                </div>
+            </div>
+
+            <div id="transactions-container" class="page-container hidden">
+                <h2>Transactions</h2>
+                <table id="transactions-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>User</th>
+                            <th>Amount</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Transactions will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="tasks-container" class="page-container hidden">
+                <h2>Tasks Management</h2>
+              <button id="create-task-button" class="btn btn-primary">Create New Task</button>
+                <div class="tasks-list">
+                    <!-- Tasks will be populated here -->
+                </div>
+            </div>
+
+            <div id="settings-container" class="page-container hidden">
+                <h2>Settings</h2>
+                <div class="settings-form">
+                    <!-- Settings form will be added here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
